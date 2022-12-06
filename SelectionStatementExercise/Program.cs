@@ -6,7 +6,7 @@
         {
             var FavoriteNumber = 23;
 
-            Console.WriteLine("Try to guess my favorite number");
+            Console.WriteLine("Try to guess my favorite number.");
             var UserGuess = int.Parse(Console.ReadLine());
 
             if (UserGuess < FavoriteNumber)
