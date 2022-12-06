@@ -4,23 +4,35 @@
     {
         static void Main(string[] args)
         {
-            var FavoriteNumber = 23;
+            Console.WriteLine("Welcome to the number guessing game!");
+            Console.WriteLine("See if you can guess the correct number!");
+            Console.WriteLine("What is the upper limit for the range of the number?");
 
-            Console.WriteLine("Try to guess my favorite number.");
-            var UserGuess = int.Parse(Console.ReadLine());
+            var UpperLimit = int.Parse(Console.ReadLine());
 
-            if (UserGuess < FavoriteNumber)
+            var random = new Random();
+            var number = random.Next(1, UpperLimit);
+
+            int UserGuess;
+            do
             {
-                Console.WriteLine("Too Low");
-            }
-            else if (UserGuess > FavoriteNumber)
-            {
-                Console.WriteLine("Too High");
-            }
-            else
-            {
-                Console.WriteLine("Congratulations! You guessed it!");
-            }
+                Console.WriteLine("Enter your guess:");
+
+                UserGuess = int.Parse(Console.ReadLine());
+
+                if (UserGuess < number)
+                {
+                    Console.WriteLine("Your guess is too low. I'm sorry!");
+                }
+                else if (UserGuess > number)
+                {
+                    Console.WriteLine("Your guess is too high. I'm sorry!");
+                }
+                else
+                {
+                    Console.WriteLine("Congratulations! You guessed it!");
+                }
+            } while (UserGuess != number);
         }
     }
 }
